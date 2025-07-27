@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gemini AI Assistant</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+
+</head>
+<body>
+    <h1>💬 Rahul's AI Assistant</h1>
+    <form method="post">
+        <label for="user_input">Your Input:</label><br>
+        <textarea name="user_input" rows="5" cols="60" placeholder="Ask me something..." required></textarea><br><br>
+
+        <label for="mode">Select Mode:</label>
+        <select name="mode" id="mode">
+            <option value="question">Question</option>
+            <option value="summary">Summary</option>
+            <option value="creative">Creative</option>
+        </select><br><br>
+ 
+        <label for="model">Select Gemini Model:</label>
+        <select name="model" id="model">
+            <option value="models/gemini-1.5-flash">Gemini 1.5 Flash</option>
+            <option value="models/gemini-1.5-pro">Gemini 1.5 Pro</option>
+            <option value="models/gemini-1.5-pro-002">Gemini 1.5 Pro 002</option>
+            <option value="models/gemini-1.5-flash-002">Gemini 1.5 Flash 002</option>
+            <option value="models/gemini-2.5-flash-lite-preview-06-17">Gemini 2.5 Flash Lite Preview</option>
+        </select><br><br>
+
+        <label for="feedback">Feedback (optional):</label><br>
+        <input type="text" name="feedback" size="60"><br><br>
+
+        <input type="submit" value="Get Response">
+    </form>
+
+    {% if response %}
+        <hr>
+        <h3>AI Response:</h3>
+        <p>{{ response }}</p>
+    {% endif %}
+</body>
+</html>
